@@ -13,7 +13,12 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: ['./src/main.js']
+  },
+  // 前面是key 第三方库名 后面是value项目中的别名
+  externals: {
+    'vue': 'Vue',
+    'iView': 'iView',
   },
   output: {
     path: config.build.assetsRoot,

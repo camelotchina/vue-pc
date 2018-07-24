@@ -1,16 +1,24 @@
 
-import  { HTTP } from '../util/axios'
+import  { HTTP } from '@/util/axios'
 
-const api = {
-  // 公用接口
-  base: {
-    getUser: () => HTTP.get('/user/list')
-  },
-  // 权限接口
-  auth: {
-
-  },
-
+export const getUserInfo = (data) => {
+  return HTTP({
+    url: '/get_info',
+    params: {
+      data
+    },
+    method: 'get'
+  })
 }
 
-export default api;
+export const logout = ({ userName, password }) => {
+  const data = {
+    userName,
+    password 
+  }
+  return HTTP({
+    url: '/logout',
+    method: 'post',
+    data
+  })
+}

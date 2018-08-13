@@ -1,6 +1,5 @@
 
 import  { HTTP } from '@/util/axios'
-
 export const getUserInfo = (data) => {
   return HTTP({
     url: '/get_info',
@@ -10,7 +9,6 @@ export const getUserInfo = (data) => {
     method: 'get'
   })
 }
-
 export const logout = ({ userName, password }) => {
   const data = {
     userName,

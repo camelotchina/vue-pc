@@ -19,7 +19,7 @@ npm run build --report
 ```
 
 # 文件夹结构化规范
-
+``` bash
    ├── index.html                      入口页面
    ├── build                           构建脚本目录
    │   ├── build-server.js                 运行本地构建服务器，可以访问构后的页面
@@ -54,3 +54,5 @@ npm run build --report
    │   └── views                           页面目录
    │       └── hello.vue
    ├── static                          纯静态资源，不会被wabpack构建。
+   
+   ```

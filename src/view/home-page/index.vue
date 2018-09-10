@@ -1,5 +1,6 @@
 <template>
     <div class="hello">
+       
         <header class="header">
             <h1>{{ msg }}</h1>
         </header>
@@ -17,6 +18,12 @@
             <p v-for="(item,index) in getList" :key="index">{{ item.a }}</p>
             <p>数量：{{ getListLength }}</p>
         </div>
+          <hr></hr>  
+         <p class="text_c">国际化：{{ $t('header.a') }}</p>
+         <div class="text_c">
+              <Button type="primary" @click="setZh">zh-CN</Button>
+              <Button type="primary" @click="setEn">en-US</Button>
+         </div>
     </div>
 </template>
 
@@ -26,6 +33,7 @@
         mapGetters
     } from "vuex";
     import imgLogo from "@/assets/img/logo.png";
+    import Cookies from 'js-cookie'
 
     export default {
         name: "HelloWorld",
@@ -41,7 +49,15 @@
             ...mapGetters(["getList", "getListLength"])
         },
         methods: {
-            ...mapActions(["addCont", "reduceCont"])
+            ...mapActions(["addCont", "reduceCont"]),
+            setZh(){
+                Cookies.set('lang','zh-CN');
+                window.location.reload();
+            },
+            setEn(){
+                Cookies.set('lang','en-US');
+                window.location.reload();
+            }
         }
     };
 </script>

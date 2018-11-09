@@ -6,7 +6,7 @@ import i18n from '@/locale'
 import 'iview/dist/styles/iview.css'
 import { HTTP } from './util/axios'
 import store from './store'
-import '@/theme/index.scss'
+import '@/theme/index.less'
 import '@/assets/style/base.css'
 import './assets/style/icon/iconfont.js'
 

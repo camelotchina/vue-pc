@@ -14,7 +14,8 @@
             <p v-for="(item,index) in getList" :key="index">{{ item.a }}</p>
             <p>数量：{{ getListLength }}</p>
         </div>
-          <hr></hr>  
+          <hr></hr> 
+         ---{{ baseURL }}
          <p class="text_c">国际化：{{ $t('header.a') }}</p>
          <div class="text_c">
               <Button type="primary" @click="setZh">zh-CN</Button>
@@ -26,6 +27,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import { baseURL } from '../../util/axios.js'
 import Cookies from 'js-cookie'
 import Box from '../check-box'
 export default {
@@ -33,6 +35,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      baseURL,
       twitter: '',
       data: [
         {

@@ -3,11 +3,14 @@ import Cookies from 'js-cookie'
 import { Message } from 'iview'
 
 const envConfig = {
-  production: '/api/v1',
-  development: 'http://localhost:8080/api/v1'
-}
+  production: 'http://localhost:8080/api/v1/production---------',
+  development: 'http://localhost:8080/api/v1/dev--------------',
+  dev: 'http://localhost:8080/api/v1/dev--------------',
+  pre: 'http://localhost:8080/api/v1/pre-----'
 
-export const baseURL = envConfig[process.env.NODE_ENV || 'development']
+}
+console.log(process.env.BUILD_ENV)
+export const baseURL = envConfig[process.env.BUILD_ENV || 'production']
 
 export const HTTP = axios.create({
   baseURL,

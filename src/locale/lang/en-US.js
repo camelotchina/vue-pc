@@ -1,5 +1,5 @@
 export default {
-  header:{
-      a:'this is a'
+  header: {
+    a: 'this is a'
   }
 }

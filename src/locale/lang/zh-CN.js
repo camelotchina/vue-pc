@@ -1,6 +1,5 @@
 export default {
-    header:{
-        a:'这是a'
-    }
+  header: {
+    a: '这是a'
   }
-  
+}

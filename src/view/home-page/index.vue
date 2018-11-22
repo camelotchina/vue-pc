@@ -1,19 +1,15 @@
 <template>
     <div class="hello">
-       
         <header class="header">
             <h1>{{ msg }}</h1>
         </header>
         <h5 class="text_c">vuex</h5>
-
         <div class="box">
             <Button type="primary" @click="reduceCont">-</Button>
             <p>{{ getCont}}</p>
             <Button type="primary" @click="addCont">+</Button>
         </div>
-
         <Icon type="ios-alarm-outline" />
-
         <div class="text_c">
             <p v-for="(item,index) in getList" :key="index">{{ item.a }}</p>
             <p>数量：{{ getListLength }}</p>
@@ -24,59 +20,79 @@
               <Button type="primary" @click="setZh">zh-CN</Button>
               <Button type="primary" @click="setEn">en-US</Button>
          </div>
+        <Box v-for="(item,index) in data" :key="index" @changes="getBox" :value="item.value" :name="item.name"  :checked="item.checked"></Box>
     </div>
 </template>
 
 <script>
-    import {
-        mapActions,
-        mapGetters
-    } from "vuex";
-    import imgLogo from "@/assets/img/logo.png";
-    import Cookies from 'js-cookie'
-
-    export default {
-        name: "HelloWorld",
-        data() {
-            return {
-                msg: "Welcome to Your Vue.js App"
-            };
+import { mapActions, mapGetters } from 'vuex'
+import Cookies from 'js-cookie'
+import Box from '../check-box'
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      twitter: '',
+      data: [
+        {
+          value: '111',
+          name: '测试',
+          checked: true
         },
-        computed: {
-            getCont() {
-                return this.$store.state.cont.cont;
-            },
-            ...mapGetters(["getList", "getListLength"])
+        {
+          value: '111',
+          name: '测试1',
+          checked: true
         },
-        methods: {
-            ...mapActions(["addCont", "reduceCont"]),
-            setZh(){
-                Cookies.set('lang','zh-CN');
-                window.location.reload();
-            },
-            setEn(){
-                Cookies.set('lang','en-US');
-                window.location.reload();
-            }
+        {
+          value: '111',
+          name: '测试3',
+          checked: false
         }
-    };
+      ]
+    }
+  },
+  components: {
+    Box
+  },
+  computed: {
+    getCont () {
+      return this.$store.state.cont.cont
+    },
+    ...mapGetters(['getList', 'getListLength'])
+  },
+  methods: {
+    ...mapActions(['addCont', 'reduceCont']),
+    setZh () {
+      Cookies.set('lang', 'zh-CN')
+      window.location.reload()
+    },
+    setEn () {
+      Cookies.set('lang', 'en-US')
+      window.location.reload()
+    },
+    getBox (ev) {
+      console.log(ev)
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='less'>
 .header {
-    text-align: center;
-    padding: 20px 0;
+  text-align: center;
+  padding: 20px 0;
 }
 
 .box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    p {
-        width: 120px;
-        text-align: center;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    width: 120px;
+    text-align: center;
+  }
 }
-
 </style>

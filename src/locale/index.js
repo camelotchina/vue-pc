@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import Cookies from 'js-cookie'
-
 import customZhCn from './lang/zh-CN'
 import customEnUs from './lang/en-US'
-
 import zhCnLocale from 'iview/src/locale/lang/zh-CN'
 import enUsLocale from 'iview/src/locale/lang/en-US'
 
@@ -18,7 +16,7 @@ let lang = Cookies.get('lang') || window.localStorage.lang || localLang || 'zh-C
 Vue.config.lang = lang
 
 // vue-i18n 6.x+写法
-Vue.locale = () => {}
+Vue.locale = () => { }
 const messages = {
   'zh-CN': Object.assign(zhCnLocale, customZhCn),
   'en-US': Object.assign(enUsLocale, customEnUs)

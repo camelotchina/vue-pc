@@ -10,16 +10,16 @@
 </template>
 
 <script>
-import imgLogo from "@/assets/img/logo.png";
+import imgLogo from '@/assets/img/logo.png'
 export default {
-  name: "HelloWorld",
-  data() {
+  name: 'HelloWorld',
+  data () {
     return {
-      msg: "Welcome to Your Vue.js App",
+      msg: 'Welcome to Your Vue.js App',
       imgLogo
-    };
+    }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -7,9 +7,10 @@
   "scripts": {
     "start": "npm run dev",
     "dev": " cross-env BUILD_ENV=dev webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "build": "node build/build.js",
-    "buildDev": "cross-env BUILD_ENV=dev  node build/build.js",
-    "buildPre": "cross-env BUILD_ENV=pre  node build/build.js",
+    "build": "cross-env BUILD_ENV=dev node build/build.js",
+    "test-build": "cross-env BUILD_ENV=test  node build/build.js",
+    "pre-build": "cross-env BUILD_ENV=pre  node build/build.js",
+    "prd-build": "cross-env BUILD_ENV=prd  node build/build.js",
     "i": "npm install --registry=https://registry.npm.taobao.org",
     "n": "npm install --registry=http://10.92.1.117:8873"
   },

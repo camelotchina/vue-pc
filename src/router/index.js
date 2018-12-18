@@ -10,6 +10,11 @@ const router = new Router({
       path: '/',
       name: 'HomePage',
       component: resolve => require(['@/view/home-page/index.vue'], resolve)
+    },
+    {
+      path: '/layout',
+      name: 'layout',
+      component: resolve => require(['@/components/Layout.vue'], resolve)
     }
   ]
 })

@@ -22,6 +22,6 @@ module.exports = {
       // allow async-await 强制 generator 函数中 * 号周围使用一致的空格
       'generator-star-spacing': 0,
       // allow debugger during development
-      'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+      'no-debugger': process.env.NODE_ENV === 'production' ? 4 : 0
     }
   }

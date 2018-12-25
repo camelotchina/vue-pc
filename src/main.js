@@ -5,7 +5,6 @@ import iView from 'iview'
 import { HTTP } from './util/axios'
 import store from './store'
 import i18n from '@/locale'
-import 'iview/dist/styles/iview.css'
 import '@/theme/index.less'
 import '@/assets/style/base.css'
 
